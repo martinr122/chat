@@ -9,6 +9,7 @@ export default function Header() {
           alt="UPJŠ"
           width={50}
           height={50}
+          unoptimized
           style={{ width: "50px", height: "auto" }}
         />
 
