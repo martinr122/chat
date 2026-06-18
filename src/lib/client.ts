@@ -1,3 +1,5 @@
+import { createUuid } from "@/lib/uuid";
+
 const CLIENT_KEY = "upjs-client-id";
 
 export function getOrCreateClientId(): string {
@@ -6,7 +8,7 @@ export function getOrCreateClientId(): string {
   let clientId = localStorage.getItem(CLIENT_KEY);
 
   if (!clientId) {
-    clientId = crypto.randomUUID();
+    clientId = createUuid();
     localStorage.setItem(CLIENT_KEY, clientId);
   }
 

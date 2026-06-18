@@ -7,6 +7,7 @@ import { Message } from "@/types/chat";
 import { getOrCreateClientId } from "@/lib/client";
 import { sendMessage } from "@/lib/api";
 import { createSessionId } from "@/lib/session";
+import { createUuid } from "@/lib/uuid";
 
 function getTimeString() {
   return new Date().toLocaleTimeString("sk-SK", {
@@ -19,7 +20,7 @@ const sessionId = createSessionId();
 
 function createMessage(role: "user" | "assistant", content: string): Message {
   return {
-    id: crypto.randomUUID(),
+    id: createUuid(),
     role,
     content,
     timestamp: getTimeString(),
